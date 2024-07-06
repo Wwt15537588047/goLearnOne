@@ -1,4 +1,4 @@
-package controller
+package controllers
 
 import (
 	"github.com/gin-gonic/gin"
@@ -13,7 +13,12 @@ type JsonStruct struct {
 	Count int64       `json:"count"`
 }
 
-func ReturnSuccess(ctx gin.Context, code int, msg interface{}, data interface{}, count int64) {
+type JsonStructFailure struct {
+	Code int         `json:"code"`
+	Msg  interface{} `json:"msg"`
+}
+
+func ReturnSuccess(ctx *gin.Context, code int, msg interface{}, data interface{}, count int64) {
 	json := &JsonStruct{
 		Code:  code,
 		Msg:   msg,
@@ -23,8 +28,8 @@ func ReturnSuccess(ctx gin.Context, code int, msg interface{}, data interface{},
 	ctx.JSON(http.StatusOK, json)
 }
 
-func ReturnFailure(ctx gin.Context, code int, msg interface{}) {
-	json := &JsonStruct{
+func ReturnError(ctx *gin.Context, code int, msg interface{}) {
+	json := &JsonStructFailure{
 		Code: code,
 		Msg:  msg,
 	}

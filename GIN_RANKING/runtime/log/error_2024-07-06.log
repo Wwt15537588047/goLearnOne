@@ -1,0 +1,41 @@
+panic error time:2024-07-06 17:03:23
+runtime error: integer divide by zero
+stacktrace from panic:goroutine 18 [running]:
+runtime/debug.Stack()
+	D:/MySurfance/Go/go.windows/src/runtime/debug/stack.go:24 +0x5e
+gin_ranking/pkg/logger.Recover.func1()
+	E:/BackEnd/Golang/goLearnOne/GIN_RANKING/pkg/logger/logger.go:138 +0x276
+panic({0xcec3e0?, 0x10c1280?})
+	D:/MySurfance/Go/go.windows/src/runtime/panic.go:770 +0x132
+gin_ranking/controllers.(*UserController).GetUserList(0xc00020f578?, 0x92a67b?)
+	E:/BackEnd/Golang/goLearnOne/GIN_RANKING/controllers/user.go:29 +0x30
+github.com/gin-gonic/gin.(*Context).Next(...)
+	C:/Users/28213/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+gin_ranking/pkg/logger.Recover(0xc00023a000)
+	E:/BackEnd/Golang/goLearnOne/GIN_RANKING/pkg/logger/logger.go:148 +0x62
+github.com/gin-gonic/gin.(*Context).Next(...)
+	C:/Users/28213/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.LoggerWithConfig.func1(0xc00023a000)
+	C:/Users/28213/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/logger.go:249 +0xe5
+github.com/gin-gonic/gin.(*Context).Next(...)
+	C:/Users/28213/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.CustomRecoveryWithWriter.func1(0xc00023a000)
+	C:/Users/28213/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/recovery.go:102 +0x7a
+github.com/gin-gonic/gin.(*Context).Next(...)
+	C:/Users/28213/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.LoggerWithConfig.func1(0xc00023a000)
+	C:/Users/28213/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/logger.go:249 +0xe5
+github.com/gin-gonic/gin.(*Context).Next(...)
+	C:/Users/28213/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest(0xc0000fcea0, 0xc00023a000)
+	C:/Users/28213/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/gin.go:633 +0x892
+github.com/gin-gonic/gin.(*Engine).ServeHTTP(0xc0000fcea0, {0xe21390, 0xc000228000}, 0xc0001c4000)
+	C:/Users/28213/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/gin.go:589 +0x1b2
+net/http.serverHandler.ServeHTTP({0xc0001ac090?}, {0xe21390?, 0xc000228000?}, 0x6?)
+	D:/MySurfance/Go/go.windows/src/net/http/server.go:3137 +0x8e
+net/http.(*conn).serve(0xc0001b0000, {0xe21da8, 0xc000172210})
+	D:/MySurfance/Go/go.windows/src/net/http/server.go:2039 +0x5e8
+created by net/http.(*Server).Serve in goroutine 1
+	D:/MySurfance/Go/go.windows/src/net/http/server.go:3285 +0x4b4
+
+{"level":"error","msg":"[]","mysql connect error":"sql: unknown driver \"mysql\" (forgotten import?)","time":"2024-07-06 18:11:56"}
